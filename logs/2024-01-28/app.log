@@ -1,0 +1,34 @@
+[E 240128 12:01:33 559531743:4] {'status': False, 'message': 'Invalid totp', 'errorcode': 'AB1050', 'data': None}
+[I 240128 12:10:05 1093824189:19] PlaceOrder : {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'SBIN-EQ', 'orderid': '240128000000582', 'uniqueorderid': '4bd53d40-0a63-48fb-acb0-6a2dcff4fd67'}}
+[I 240128 12:11:05 449097630:19] PlaceOrder : {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'SBIN-EQ', 'orderid': '240128000000583', 'uniqueorderid': 'cd232a75-1db7-46cc-8c41-73296239dd1e'}}
+[E 240128 15:40:21 1551540029:12] Historic Api failed: Couldn't parse the JSON response received from the server: b''
+    Traceback (most recent call last):
+      File "C:\Users\Sharmila\OneDrive\Desktop\trade\env\Lib\site-packages\SmartApi\smartConnect.py", line 196, in _request
+        data = json.loads(r.content.decode("utf8"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "C:\Users\Sharmila\OneDrive\Desktop\trade\env\Lib\json\__init__.py", line 346, in loads
+        return _default_decoder.decode(s)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "C:\Users\Sharmila\OneDrive\Desktop\trade\env\Lib\json\decoder.py", line 337, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "C:\Users\Sharmila\OneDrive\Desktop\trade\env\Lib\json\decoder.py", line 355, in raw_decode
+        raise JSONDecodeError("Expecting value", s, err.value) from None
+    json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "C:\Users\Sharmila\AppData\Local\Temp\ipykernel_22756\1551540029.py", line 10, in <module>
+        candel_data = smartApi.getCandleData(historicParam)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "C:\Users\Sharmila\OneDrive\Desktop\trade\env\Lib\site-packages\SmartApi\smartConnect.py", line 430, in getCandleData
+        getCandleDataResponse=self._postRequest("api.candle.data",historicDataParams)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "C:\Users\Sharmila\OneDrive\Desktop\trade\env\Lib\site-packages\SmartApi\smartConnect.py", line 228, in _postRequest
+        return self._request(route, "POST", params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "C:\Users\Sharmila\OneDrive\Desktop\trade\env\Lib\site-packages\SmartApi\smartConnect.py", line 199, in _request
+        raise ex.DataException("Couldn't parse the JSON response received from the server: {content}".format(
+    SmartApi.smartExceptions.DataException: Couldn't parse the JSON response received from the server: b''
+[I 240128 15:57:29 449097630:19] PlaceOrder : {'status': True, 'message': 'SUCCESS', 'errorcode': '', 'data': {'script': 'SBIN-EQ', 'orderid': '240128000000879', 'uniqueorderid': '5fe27f31-a516-4a2b-99f5-2224e901898c'}}
